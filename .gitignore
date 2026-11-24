@@ -22,11 +22,8 @@ tmp*/
 /results/
 examples/validation_*/
 examples/concept_results/
-tests/artifacts/*
-!tests/artifacts/.gitkeep
-!tests/artifacts/smoke_results/
-tests/artifacts/smoke_results/*
-!tests/artifacts/smoke_results/.gitkeep
+/.test_artifacts/
+/tests/artifacts/
 
 # Real pilot data must not be committed without consent and anonymisation
 data/raw/

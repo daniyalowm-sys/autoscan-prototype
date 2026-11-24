@@ -10,11 +10,12 @@ from autoscan import list_images
 
 
 ROOT = Path(__file__).resolve().parent
-ARTIFACTS = ROOT / "tests" / "artifacts"
+ARTIFACTS = ROOT / ".test_artifacts"
 
 
 class AutoScanSmokeTest(unittest.TestCase):
     def test_pipeline_creates_report_and_annotated_image(self) -> None:
+        ARTIFACTS.mkdir(parents=True, exist_ok=True)
         sample = ARTIFACTS / "smoke_sample.png"
         results = ARTIFACTS / "smoke_results"
 
@@ -46,7 +47,7 @@ class AutoScanSmokeTest(unittest.TestCase):
         self.assertTrue(report["images"][0]["diagnostic_only"])
 
     def test_unsupported_extension_is_rejected(self) -> None:
-        unsupported = ROOT / "tests" / "fixtures" / "unsupported.txt"
+        unsupported = ROOT / "README.md"
         with self.assertRaisesRegex(ValueError, "Неподдерживаемое расширение"):
             list_images(unsupported)
 
