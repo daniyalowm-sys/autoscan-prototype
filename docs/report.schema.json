@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AutoScan prototype report",
+  "type": "object",
+  "required": ["project", "prototype_version", "warning", "images"],
+  "properties": {
+    "project": {"const": "AutoScan"},
+    "prototype_version": {"type": "string"},
+    "warning": {"type": "string"},
+    "images": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source",
+          "processed_width",
+          "processed_height",
+          "algorithm",
+          "diagnostic_only",
+          "candidate_count",
+          "candidates",
+          "outputs"
+        ],
+        "properties": {
+          "source": {"type": "string"},
+          "processed_width": {"type": "integer", "minimum": 1},
+          "processed_height": {"type": "integer", "minimum": 1},
+          "resize_scale": {"type": "number", "exclusiveMinimum": 0, "maximum": 1},
+          "algorithm": {"type": "string"},
+          "diagnostic_only": {"const": true},
+          "candidate_count": {"type": "integer", "minimum": 0},
+          "candidates": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["x", "y", "width", "height", "area_px", "score"],
+              "properties": {
+                "x": {"type": "integer", "minimum": 0},
+                "y": {"type": "integer", "minimum": 0},
+                "width": {"type": "integer", "minimum": 1},
+                "height": {"type": "integer", "minimum": 1},
+                "area_px": {"type": "number", "minimum": 0},
+                "score": {"type": "number", "minimum": 0, "maximum": 1}
+              },
+              "additionalProperties": false
+            }
+          },
+          "outputs": {
+            "type": "object",
+            "required": ["annotated", "mask", "debug"],
+            "properties": {
+              "annotated": {"type": "string"},
+              "mask": {"type": "string"},
+              "debug": {"type": ["string", "null"]}
+            },
+            "additionalProperties": false
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

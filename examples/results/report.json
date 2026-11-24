@@ -1,0 +1,31 @@
+{
+  "project": "AutoScan",
+  "prototype_version": "0.1.0",
+  "warning": "Результат является подсказкой для механика и не заменяет диагностику.",
+  "images": [
+    {
+      "source": "examples\\synthetic_underbody.jpg",
+      "processed_width": 1280,
+      "processed_height": 720,
+      "resize_scale": 1.0,
+      "algorithm": "heuristic_baseline_v0.1",
+      "diagnostic_only": true,
+      "candidate_count": 1,
+      "candidates": [
+        {
+          "x": 526,
+          "y": 320,
+          "width": 349,
+          "height": 141,
+          "area_px": 37770.5,
+          "score": 0.692
+        }
+      ],
+      "outputs": {
+        "annotated": "examples\\results\\synthetic_underbody_annotated.jpg",
+        "mask": "examples\\results\\synthetic_underbody_mask.png",
+        "debug": "examples\\results\\synthetic_underbody_debug.jpg"
+      }
+    }
+  ]
+}

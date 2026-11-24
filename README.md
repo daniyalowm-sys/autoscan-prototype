@@ -23,7 +23,7 @@ AutoScan — ранний программный прототип для про�
 
 Синтетический входной кадр:
 
-![Синтетический стендовый кадр](examples/synthetic_underbody.png)
+![Синтетический стендовый кадр](examples/synthetic_underbody.jpg)
 
 Результат работы прототипа:
 
@@ -40,8 +40,8 @@ AutoScan — ранний программный прототип для про�
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
-python create_synthetic_example.py --output examples\synthetic_underbody.png
-python autoscan.py --input examples\synthetic_underbody.png --output results --save-debug
+python create_synthetic_example.py --output examples\synthetic_underbody.jpg
+python autoscan.py --input examples\synthetic_underbody.jpg --output results --save-debug
 ```
 
 Проверка версии:
