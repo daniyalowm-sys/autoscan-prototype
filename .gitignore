@@ -1,0 +1,35 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments and local configuration
+.venv/
+venv/
+.env
+.env.*
+
+# Editors and operating systems
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Generated test and runtime artifacts
+tmp*/
+/results/
+examples/validation_*/
+examples/concept_results/
+tests/artifacts/*
+!tests/artifacts/.gitkeep
+!tests/artifacts/smoke_results/
+tests/artifacts/smoke_results/*
+!tests/artifacts/smoke_results/.gitkeep
+
+# Real pilot data must not be committed without consent and anonymisation
+data/raw/
+data/private/
+
+
